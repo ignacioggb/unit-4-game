@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RPG GAME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="assets/javascript/gamex.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+</head>
+<body>
+    <h1>SMASH BROS. RPG!</h1>
+
+    <div class="container">
+    <div class="row" >
+    <div class="col-sm" id="selector">
+    </div>
+    </div>
+
+    <div class="container" >
+        <p class="titles">Your character</p>
+        <div class="row" >
+        <div class="col-sm" id="yourchar">
+        </div>
+    </div>
+
+    <div class="container">
+        <p class="titles">Enemies Available to attack</p>
+        <div class="row" >
+        <div class="col-sm"  id="enemies">
+    </div>
+
+    <div class="container" id="fightsec">
+        <p class="titles">Fight Section</p>
+        <div class="row" >
+                <div class="col-sm">
+                        <button type="button" class="btn btn-lg btn-primary">Attack</button>
+                </div>
+        
+    </div>
+
+    <div class="container" id="defender">
+        <p class="titles">Defender</p>
+    </div>
+
+</div>
+
+
+<script>
+    //name//HP//attack//Cattack
+  var luigi = {info:["luigi","95","8","8"]};
+  var mario = {info:["mario","120","12","12"]};
+  var bowser = {info:["bowser","100","20","20"]};
+  var yoshi = {info:["yoshi","90","9","9"]};
+var char=[luigi,mario,bowser,yoshi];
+
+
+$.each(char, function( index, value ) {
+    writechars(value,"selector");
+  });
+
+selections();
+//attack();
+function selections(){
+    $(".card").on("click", function () {
+        $("#selector").remove();
+        id2value(this.id,char);
+        var value=id2value(this.id,char);
+        writechars(value,"yourchar");
+        var tempchar = char;
+        tempchar.splice($.inArray(value, tempchar),1);
+        $.each(tempchar, function( index, value ) {
+        writechars(value,"enemies");
+        });
+                $(".card").on("click", function () {
+                    $(this).remove();
+                    var value=this.id;
+                    id2value(this.id,char);
+        var value=id2value(this.id,char);
+                    //console.log(this.id);
+                   writechars(value,"defender");
+                 })
+
+    })
+
+}
+    function writechars(value,place){
+    var card = $("<div>");
+    card.attr("class", "card");
+    card.attr("id", value.info[0]);
+    card.appendTo('#'+place);
+    var img = $('<img class="card-img-top">');
+    img.attr('src',"assets/images/char-"+value.info[0]+".png");
+    img.appendTo('#'+value.info[0]);
+    var cardbody = $("<div>");
+    cardbody.attr("class", "card-body");
+    cardbody.attr("id", "p"+value.info[0]);
+    cardbody.appendTo('#'+value.info[0]);
+    var ptext = $("<p>");
+    ptext.attr("class", "card-text");
+    ptext.text(value.info[0]+": "+value.info[1]);
+    ptext.appendTo('#p'+value.info[0]);
+    }
+
+    function id2value(id,array){
+    var length2 = array.length;
+    for (let index = 0; index <length2; index++) {
+    var Obj = array[index];
+     var NameOf = Obj.info[0];
+     if(id==NameOf){
+         console.log(Obj);
+         return array[index];
+     }
+    }
+    }
+
+
+
+
+
+</script>
+
+</body>
+
+
+</html>

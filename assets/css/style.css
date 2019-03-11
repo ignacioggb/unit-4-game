@@ -1,0 +1,37 @@
+body{
+    background-image: url(http://images5.fanpop.com/image/photos/26500000/Mario-Background-nintendo-26503062-1680-1050.jpg);
+}
+
+h1{
+    font-family: 'Bungee Shade', cursive;
+    font-size: 35px;
+
+}
+
+.titles{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+.card{
+    float:left;
+    height:13rem;
+    width:10rem;
+   }
+
+img{
+    height:10rem;
+    width:10rem;
+}
+
+.btn{
+   margin: 20px;
+}
+
+.card-body{
+    text-align: center;
+    padding:0px;
+    margin-top:15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
