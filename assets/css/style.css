@@ -35,3 +35,18 @@ img{
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
 }
+
+#enemies .card {
+    background-color:red;
+    color:white;
+}
+
+#defender .card {
+    background-color:black;
+    color:white;
+}
+
+#yourchar .card {
+    background-color:lightgreen;
+    color:black;
+}
