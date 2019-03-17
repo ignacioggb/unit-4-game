@@ -12,16 +12,14 @@
     
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-   
 </head>
 <body>
-    
+
     <h1>SMASH BROS. RPG!</h1>
-    <div class="narration"></div>
-    <div class="narration2"></div>
+
     <div class="container">
     <div class="row" >
     <div class="col-sm" id="selector">
@@ -44,10 +42,15 @@
     <div class="container" id="fightsec">
         <p class="titles">Fight Section</p>
         <div class="row" >
-                <div class="col-sm">
-                        <button type="button" class="btn btn-lg btn-primary">Attack</button>
+                <div class="col-2">
+
+                        <button type="button" class="btn btn-lg btn-primary attack">Attack</button>
                 </div>
-        
+                <div class="col-6 coltext">
+                        <div class="narration"></div>
+                        <div class="narration2"></div>
+                    </div>
+                    <div class="col-4 restart"></div>
     </div>
 
     <div class="container" id="defender">
@@ -57,6 +60,7 @@
 </div>
 
 <script src="assets/javascript/game.js"></script>
+
 </body>
 
 
