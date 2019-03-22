@@ -2,7 +2,7 @@
 
 var luigi = {info:["luigi","95","8","8","place"]};
     var mario = {info:["mario","120","12","12","place"]};
-    var bowser = {info:["bowser","100","20","20","place"]};
+    var bowser = {info:["bowser","100","14","20","place"]};
     var yoshi = {info:["yoshi","90","9","9","place"]};
     var char=[luigi,mario,bowser,yoshi];
     var flag = false;
@@ -39,7 +39,11 @@ return display;
                 $("#p"+enemie.info[0]).html("<p>"+enemie.info[0]+": "+enemie.info[1]+"</p>");
                 $("#p"+myplayer.info[0]).html("<p>"+myplayer.info[0]+": "+myplayer.info[1]+"</p>");
             }
-            else {$("#"+enemie.info[0]).remove(); flag=false;
+            else {
+            narration="you defeated "+enemie.info[0];narration2="choose other enemie";
+            $(".narration").html("<h3>"+narration+"</h3>");
+            $(".narration2").html("<h3>"+narration2+"</h3>");
+            $("#"+enemie.info[0]).remove(); flag=false;
             var tempchar = char;
             tempchar.splice($.inArray(enemie, tempchar),1); 
             if(char.length==0){ narration="you won";narration2="GAME OVER";restart();}
